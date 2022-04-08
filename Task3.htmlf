@@ -1,0 +1,200 @@
+<html>
+    <title>
+        Registration Form
+    </title>
+    <style>
+        body {font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:purple;
+        }
+    *{
+        box-sizing: border-box;
+        width:300px;
+        
+       
+        
+
+     } input[type=text],input[type=email]{
+            width:100%;
+            padding:15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            background-color:whites;
+          border-color:blue;
+
+
+        }
+        .gender,.skills{
+            width:100%;
+            padding:15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            background-color:whites;
+          border-color:blue;
+
+
+        }
+        input[type=text]:focus,
+        input[type=email]:focus{
+            background-color: antiquewhite;
+            outline:none;
+        }    
+        button{
+            background-color: blue;
+            color:white;
+            padding:14px 20px;
+            margin: 8px 0;
+            border:none;
+            cursor:pointer;
+            width:100%;
+           
+        }
+        button:hover{
+            opacity:1;
+
+        }
+        
+        .container{
+            padding: 16px;
+
+        }
+        table
+        {
+           float:left;
+            padding-left:500px;
+            
+        }
+        th, td {
+             padding: 15px;
+            text-align: left;
+            border-bottom: 8px solid #ddd;
+}
+        
+        
+        
+        }
+        
+    </style>
+
+<body>
+   
+    
+    <div class="Container">
+        <form>
+        <h1> Student Registration Form </h2> 
+        <h3> Please Fill This Form</h3>
+       
+        <hr>
+        <label for="name"> <b> Name</b>
+        </label>
+        <input type="text" placeholder="Enter Name " id="name" name="name" required></input>
+
+        <label for="email"> <b> Email</b>
+        </label>
+        <input type="email" placeholder="Enter Email" id="email" name="email" required></input>
+
+        <label for="website"> <b> Website</b>
+        </label>
+        <input type="text" placeholder="Website Link " id="website" name="website" required></input>
+
+        <label for="image"> <b> Image Link</b>
+        </label>
+        <input type="text" placeholder="Image Link " id="image" name="Image" required></input>
+
+        <label for="gender"> <b> Gender</b>
+        </label>
+        <select name="gender" class="gender" id="gender">
+            <option value="none" selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        
+        <label for="skills">  <b> Skills</b>
+        </label>
+        <select name="skills" class="skills"  id="skills">
+            <option value="none" selected>Skills</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JS</option>
+        </select>
+
+        <label>
+            
+           
+        <button type="button" class="regbtn" id="btn" onClick="newRow()">Registration</button>
+    </form> 
+
+</div>
+<div class="display">
+    <table id="data" class="data">
+        <tr>
+            <th> Name </th>
+            <th> Email </th>
+            <th> Website </th>
+            <th> Image Link </th>
+            <th> Gender </th>
+            <th> Skills </th>
+        </tr>
+       
+    </table>
+</div>
+<script>
+    var name=[];
+    var email[];
+    var website[];
+    var image[];
+    var gender[];
+    var skills[];
+
+    var n=1;
+    var x=0;
+
+    function newRow(){
+        var row = document.getElementsById('data');
+        var newrow=row.insertRow(n);
+
+        name[x]=document.getElementsById('name').value;
+        email[x]=document.getElementsById('email').value;
+        website[x]=document.getElementsById('website').value;
+        image[x]=document.getElementsById('image').value;
+        gender[x]=document.getElementsById('gender').value;
+        skills[x]=document.getElementsById('skills').value;
+        if (!name[x] || !email[x] || !website[x] || !image[x] || !gender[x]  || !skills[x]) {
+    alert("Fill Details");
+    return;
+  }
+  var cell1 = newrow.insertCell(0);
+  var cell2 = newrow.insertCell(1);
+  var cell3 = newrow.insertCell(2);
+  var cell4 = newrow.insertCell(3);
+  var cell5 = newrow.insertCell(4);
+  var cell6 = newrow.insertCell(5);
+
+  cell1.innerHTML=name[x];
+  cell2.innerHTML=email[x];
+  cell3.innerHTML=website[x];
+  cell4.innerHTML=image[x];
+  cell5.innerHTML=gender[x];
+  cell6.innerHTML=gender[x];
+
+  n++;
+  x++;
+    }
+
+    </script>
+
+
+
+        
+
+       
+        
+ 
+</body>
+    
+
+
+
+
+</html>
